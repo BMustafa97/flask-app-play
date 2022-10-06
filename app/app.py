@@ -13,6 +13,10 @@ def home():
 def cars():
 	return render_template('cars.html')
 
+@app.route('/rolls', methods=['GET', 'POST'])
+def rolls():
+	return render_template('rolls.html')
+
 
 
 if __name__ == '__main__':

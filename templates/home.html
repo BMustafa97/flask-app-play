@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+<body>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        h1 {
+        h1, p {
             color: white;
-            font-size: 3em;
+            font-size: 2em;
             text-align: center;
             overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid rgb(253, 253, 253); /* The typewriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
             letter-spacing: .15em; /* Adjust as needed */
-            /* get the typerwriter effect to stop on the last letter */
-            animation: typing 4.5s steps(60, end), blink-caret .65s step-end infinite; white-space: nowrap; 
+            opacity: 0; /* Start with the footer invisible */
+            animation: fade-in 10s forwards; /* Apply the fade-in animation */
         }
         body {
             background-color: rgb(28, 27, 35);
@@ -23,17 +20,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-        }
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 52% } /* Adjust the width as needed  1300px  */    
-
-        }
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: rgb(127, 123, 117); }
         }
         /* Footer styles */
         footer {
@@ -45,18 +31,17 @@
             padding: 10px;
             text-align: center;
             color: white;
-            font-size: 1.5em;
             opacity: 0; /* Start with the footer invisible */
-            animation: fade-in 5s forwards; /* Apply the fade-in animation */
+            animation: fade-in 10s forwards; /* Apply the fade-in animation */
         }
         /* The fade-in effect */
         @keyframes fade-in {
             to { opacity: 1 }
         }
     </style>
-    <h1>Welcome to the Penetration Testing Tool</h1>
-</head>
-<body>
+    <p>This tool is designed to perform penetration tests on a website.</p>
+    <p> It will analyze the website for potential vulnerabilities and provide a report on its findings.</p>
+    <p> Please enter the website below to begin the test.</p>
     <footer>
         <p>Designed by Bilal Mustafa</p>
     </footer>

@@ -1,21 +1,12 @@
-from flask import Flask, render_template, flash
-
+from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
-
-# Create Login Page
-@app.route('/', methods=['GET', 'POST'])
-def home():
-	return render_template('index.html')
-
-@app.route('/cars', methods=['GET', 'POST'])
-def cars():
-	return render_template('cars.html')
-
-
+@app.route('/')
+def hello():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.jinja_env.auto_reload = True
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(port=5000, debug=True)
+    

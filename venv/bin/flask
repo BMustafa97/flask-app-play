@@ -1,4 +1,4 @@
-#!/Users/mab1888/MAB/development/hussy/flask-app-play/venv/bin/python3.10
+#!/Users/bilal.mustafa/mab/personal/flaskapp/flask-app-play/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

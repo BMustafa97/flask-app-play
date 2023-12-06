@@ -3,7 +3,7 @@
 <body>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        h1, p {
+        h1 {
             color: white;
             font-size: 2em;
             text-align: center;
@@ -11,6 +11,17 @@
             letter-spacing: .15em; /* Adjust as needed */
             opacity: 0; /* Start with the footer invisible */
             animation: fade-in 10s forwards; /* Apply the fade-in animation */
+        }
+        p {
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            letter-spacing: .15em; /* Adjust as needed */
+            id: "messenger";
+            /* opacity: 0; /* Start with the footer invisible */
+            /* animation: fade-in 10s forwards; /* Apply the fade-in animation */
+            animation: typing 4.5s steps(60, end), blink-caret .65s step-end infinite; white-space: nowrap;
         }
         body {
             background-color: rgb(28, 27, 35);
@@ -21,7 +32,6 @@
             height: 100vh;
             margin: 0;
         }
-        /* Footer styles */
         footer {
             position: fixed;
             bottom: 0;
@@ -29,21 +39,37 @@
             width: 100%;
             background-color: rgb(28, 27, 35);
             padding: 10px;
+            font-size: 2em;
             text-align: center;
             color: white;
             opacity: 0; /* Start with the footer invisible */
             animation: fade-in 10s forwards; /* Apply the fade-in animation */
+            animation-delay: 5s; /* Delay the animation by 5 seconds */
         }
         /* The fade-in effect */
         @keyframes fade-in {
             to { opacity: 1 }
         }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% } /* Adjust the width as needed  1300px  */    
+        }
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgb(127, 123, 117); }
+        }
     </style>
-    <p>This tool is designed to perform penetration tests on a website.</p>
-    <p> It will analyze the website for potential vulnerabilities and provide a report on its findings.</p>
-    <p> Please enter the website below to begin the test.</p>
+    <div id="messenger">
+        <p>This tool is designed to perform penetration tests on a website.</p>
+        <p> It will analyze the website for potential vulnerabilities</p>
+        <p>and provide a report on its findings.</p>
+        <p> Please enter the website below to</p>
+        <p>begin the test.</p>
+    </div>
     <footer>
-        <p>Designed by Bilal Mustafa</p>
+        Designed by Bilal Mustafa
     </footer>
 </body>
 </html>

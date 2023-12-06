@@ -24,17 +24,6 @@
             height: 100vh;
             margin: 0;
         }
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 52% } /* Adjust the width as needed  1300px  */    
-
-        }
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: rgb(127, 123, 117); }
-        }
         form {
             position: middle;
             bottom: 0;
@@ -46,7 +35,9 @@
             color: white;
             font-size: 1.5em;
             opacity: 0; /* Start with the footer invisible */
-            animation: fade-in 30s backwards; /* Apply the fade-in animation */
+            animation: fade-in 3s forwards; /* Apply the fade-in animation */
+            animation-delay: 10s; /* Delay the animation by 10 seconds */
+
         }
         /* Footer styles */
         footer {
@@ -61,6 +52,16 @@
             font-size: 1.5em;
             opacity: 0; /* Start with the footer invisible */
             animation: fade-in 5s forwards; /* Apply the fade-in animation */
+        }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 53% } /* Adjust the width as needed  1300px  */    
+        }
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgb(127, 123, 117); }
         }
         /* The fade-in effect */
         @keyframes fade-in {

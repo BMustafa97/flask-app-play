@@ -11,5 +11,9 @@ def index():
 def home():
     return render_template('home.html')
 
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    return render_template('test.html')
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

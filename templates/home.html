@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <link rel="stylesheet" href="css/styles.css">
+    <link>
     <style>
         h2 {
             color: white;
@@ -22,6 +22,16 @@
             animation: fade-in-out 10s infinite; /* Apply the fade-in animation */
             animation-delay: 15s; /* Delay the animation by 5 seconds */
         }
+        h4 {
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            letter-spacing: .15em; /* Adjust as needed */
+            opacity: 0; /* Start with the footer invisible */
+            animation: fade-in 10s forwards; /* Apply the fade-in animation */
+            animation-delay: 35s; /* Delay the animation by 5 seconds */
+        }
         p {
             color: white;
             font-size: 2em;
@@ -31,6 +41,7 @@
             /* opacity: 0; /* Start with the footer invisible */
             /* animation: fade-in 10s forwards; /* Apply the fade-in animation */
             animation: typing 4.5s steps(60, end), blink-caret .65s step-end infinite; white-space: nowrap;
+            /* animation: typing 30s steps(60, end), blink-caret .65s step-end infinite; white-space: nowrap; */
         }
         body {
             background-color: rgb(28, 27, 35);
@@ -90,7 +101,7 @@
             width: 0%;
             height: 100%;
             background-color: #2f952f;
-            animation: loading 13s forwards;
+            animation: loading 30s forwards;
             border-radius: 5px;
         }
         @keyframes loading {
@@ -120,5 +131,7 @@
     </div>
     <div class="loading-bar"></div>
     <h3>... loading ...</h3>
+    <div class="loading-icon"></div>
+    <h4>nearly there</h4>
 </body>
 </html>

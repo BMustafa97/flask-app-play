@@ -12,6 +12,10 @@ def index():
 def home():
     return render_template('home.html')
 
+@app.route('/code', methods=['GET', 'POST'])
+def code():
+    return render_template('code2.html')
+
 @app.route('/test', methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':

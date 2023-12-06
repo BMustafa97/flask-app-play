@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Runner</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #output {
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            overflow: auto;
+            white-space: pre-line;
+        }
+
+        p {
+            margin: 8px 0;
+            animation: typing 4.5s steps(60, end), blink-caret .65s step-end infinite;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Command Runner</h1>
+    <div id="output"></div>
+
+    <script>
+        var commands = ["curl google.com"];
+        var outputDiv = document.getElementById("output");
+
+        function typeCommand(cmd, callback) {
+            var i = 0;
+            var intervalId = setInterval(function() {
+                if (i < cmd.length) {
+                    outputDiv.innerHTML += cmd.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(intervalId);
+                    callback();
+                }
+            }, 100); // Speed of typing
+        }
+
+        function runCommands() {
+            for (var i = 0; i < commands.length; i++) {
+                setTimeout(function(cmd) {
+                    typeCommand(cmd, function() {
+                        outputDiv.innerHTML += "\n";
+                        outputDiv.scrollTop = outputDiv.scrollHeight; // Auto-scroll to the bottom
+                    });
+                }, i * 2000, commands[i]);
+            }
+        }
+
+        runCommands();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch and Print Text File</title>
+</head>
+<body>
+    <script>
+        fetch('../test1.txt')
+            .then(response => response.text())
+            .then(text => {
+                console.log(text); // Print the text file contents to the console
+                document.body.innerHTML = text; // Print the text file contents on the webpage
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>

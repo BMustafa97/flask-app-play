@@ -3,7 +3,7 @@
 <body>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        h1 {
+        h2 {
             color: white;
             font-size: 2em;
             text-align: center;
@@ -12,13 +12,22 @@
             opacity: 0; /* Start with the footer invisible */
             animation: fade-in 10s forwards; /* Apply the fade-in animation */
         }
+        h3 {
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            letter-spacing: .15em; /* Adjust as needed */
+            opacity: 0; /* Start with the footer invisible */
+            animation: fade-in-out 10s infinite; /* Apply the fade-in animation */
+            animation-delay: 15s; /* Delay the animation by 5 seconds */
+        }
         p {
             color: white;
             font-size: 2em;
             text-align: center;
             overflow: hidden; /* Ensures the content is not revealed until the animation */
             letter-spacing: .15em; /* Adjust as needed */
-            id: "messenger";
             /* opacity: 0; /* Start with the footer invisible */
             /* animation: fade-in 10s forwards; /* Apply the fade-in animation */
             animation: typing 4.5s steps(60, end), blink-caret .65s step-end infinite; white-space: nowrap;
@@ -43,12 +52,17 @@
             text-align: center;
             color: white;
             opacity: 0; /* Start with the footer invisible */
-            animation: fade-in 10s forwards; /* Apply the fade-in animation */
+            animation: fade-in 10s infinite; /* Apply the fade-in animation */
             animation-delay: 5s; /* Delay the animation by 5 seconds */
         }
         /* The fade-in effect */
         @keyframes fade-in {
             to { opacity: 1 }
+        }
+        /* The fade-in-out effect */
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
         /* The typing effect */
         @keyframes typing {
@@ -60,16 +74,51 @@
             from, to { border-color: transparent }
             50% { border-color: rgb(127, 123, 117); }
         }
+        /* The loading bar animation */
+        .loading-bar {
+            width: 30%; /* Adjust this value to your preference */
+            height: 5px;
+            background-color: #ccc;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .loading-bar::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            background-color: #2f952f;
+            animation: loading 13s forwards;
+            border-radius: 5px;
+        }
+        @keyframes loading {
+            0% { width: 0%; }
+            20% { width: 20%; }
+            37% { width: 37%; }
+            55% { width: 55%; }
+            64% { width: 64%; }
+            77% { width: 77%; }
+            92% { width: 92%; }
+            100% { width: 100%; }
+        }
+        /* The fading text animation */
+        .loading-text {
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            opacity: 0;
+            animation: fade-in 10s forwards;
+            animation-delay: 10s; /* Delay the animation by 10 seconds */
+        }
     </style>
-    <div id="messenger">
-        <p>This tool is designed to perform penetration tests on a website.</p>
-        <p> It will analyze the website for potential vulnerabilities</p>
-        <p>and provide a report on its findings.</p>
-        <p> Please enter the website below to</p>
-        <p>begin the test.</p>
+    <div>
+        <h2>This tool is designed to perform penetration tests on a website.</h2>
+        <h2> It will analyze the website for potential vulnerabilities</h2>
+        <h2>and provide a report on its findings</h2>
     </div>
-    <footer>
-        Designed by Bilal Mustafa
-    </footer>
+    <div class="loading-bar"></div>
+    <h3>... loading ...</h3>
 </body>
 </html>

@@ -25,18 +25,44 @@
             text-align: center;
             overflow: hidden; /* Ensures the content is not revealed until the animation */
             letter-spacing: .15em; /* Adjust as needed */
-            position: fixed;
+            position: center;
             left: 0;
             width: 100%;
             background-color: rgb(28, 27, 35);
             padding: 10px;
         }
-        /* The fade in effect */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        form {
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            letter-spacing: .15em; /* Adjust as needed */
+            position: fixed;
+            left: 0;
+            width: 100%;
+            background-color: rgb(28, 27, 35);
+            padding: 10px;
+            opacity: 0; /* Start with the footer invisible */
+            animation: fade-in 3s forwards; /* Apply the fade-in animation */
+            animation-delay: 5s; /* Delay the animation by 10 seconds */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(56, 55, 65);
+            padding: 10px;
+            font-size: 2em;
+            text-align: center;
+            color: white;
+        }
+        /* The fade-in effect */
+        @keyframes fade-in {
+            to { opacity: 1 }
         }
     </style>
+    <title>Hackerr</title>
     <script>
         window.onload = function() {
             var elements = document.getElementsByTagName('p');
@@ -58,11 +84,18 @@
                 if (counter >= text.length) {
                     clearInterval(interval);
                 }
-            }, 100); // Adjust speed as needed
+            }, 150); // Adjust speed as needed
         }
     </script>
 </head>
 <body>
-    <p> Please enter your website below to begin the test.</p>
+    <div>
+        <p> Please enter your website below to begin the test.</p>
+    </div>
+    <div>
+    <form action="/test" method="post">
+        <input type="text" name="url" placeholder="Enter URL">
+        <input type="submit" value="Submit">
+    </div>
 </body>
 </html>

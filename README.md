@@ -17,3 +17,8 @@ python3 -m venv venv
 ``` bash
 pip install -r requirements.txt
 ```
+
+if the port is being used run 
+``` bash
+kill -9 $(lsof -t -i:5000)
+```

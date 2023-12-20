@@ -4,6 +4,16 @@ from flask import request
 
 app = Flask(__name__)
 
+# pentest funcs
+def scan_site(url):
+    print('scanning site: ' + url)
+    # call hacky.py
+    # python hacky.py url
+    # return open ports
+    return 'open ports'
+
+    
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')

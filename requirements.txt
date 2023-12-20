@@ -1,2 +1,5 @@
 flask
 pyshark
+keyboard
+paramiko
+python3-nmap
